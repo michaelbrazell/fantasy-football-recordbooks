@@ -1,1 +1,2 @@
-Boilerplate React App
+# Fantasy Football Records
+A simple webapp displaying FF records.
