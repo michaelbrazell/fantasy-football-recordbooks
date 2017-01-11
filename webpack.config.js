@@ -3,7 +3,8 @@ var webpack = require('webpack');
 module.exports = {
   entry: [
     'script!jquery/dist/jquery.min.js',
-    'script!foundation-sites/dist/foundation.min.js',
+    'script!foundation-sites/dist/js/foundation.min.js',
+    'script!tablesorter/dist/js/jquery.tablesorter.min.js',
     './app/app.jsx'
   ],
   externals: {
@@ -23,6 +24,10 @@ module.exports = {
     root: __dirname,
     alias: {
       Main: 'app/components/Main.jsx',
+      Nav: 'app/components/Nav.jsx',
+      TeamStats: 'app/components/TeamStats.jsx',
+      SeasonStats: 'app/components/SeasonStats.jsx',
+      data: 'public/data/ff-records.json',
       applicationStyles: 'app/styles/app.scss'
     },
     extensions: ['', '.js', '.jsx']

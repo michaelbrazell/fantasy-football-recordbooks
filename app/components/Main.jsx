@@ -1,11 +1,15 @@
 var React = require('react');
+var Nav = require('Nav');
+var SeasonStats = require('SeasonStats');
+
 
 var Main = (props) => {
   return (
     <div>
+      <Nav/>
       <div className="row">
-        <div className="columns medium-6 large-4 small-centered">
-          <p>Main.jsx Rendered</p>
+        <div className="columns small-12 small-centered">
+          {props.children}
         </div>
       </div>
     </div>

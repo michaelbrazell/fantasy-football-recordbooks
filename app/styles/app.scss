@@ -1,1 +1,23 @@
 // Styles
+@import url(//fonts.googleapis.com/css?family=Roboto:400,500,300,100,700,900);
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  margin: .5em 0;
+}
+
+ul.menu li:first-child {
+  padding-left: 0;
+}
+
+/* Table Styles */
+table.tablesorter {
+  width: 100%;
+  margin-bottom: 35px;
+  th.tablesorter-headerDesc {
+    color: red;
+  }
+}
