@@ -17,6 +17,9 @@ ul.menu li:first-child {
 table.tablesorter {
   width: 100%;
   margin-bottom: 35px;
+  th.tablesorter-header {
+    cursor: pointer;
+  }
   th.tablesorter-headerDesc {
     color: red;
   }

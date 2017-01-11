@@ -36,7 +36,7 @@ var TeamStats = React.createClass({
                       <tr key={i}>
                         <td>{team.Name}</td>
                         <td>{team.Wins} - {team.Loss}</td>
-                        <td>{team.WinPct}</td>
+                        <td>{team.WinPct}%</td>
                         <td>{team.AvgPlace}</td>
                         <td>{team.Playoffs}</td>
                         <td>{team.Champ}</td>

@@ -10,7 +10,7 @@ var Nav = React.createClass({
             <div className="top-bar-left">
               <ul className="menu">
                 <li className="menu-text">FF Records</li>
-                <li><IndexLink to="/" activeClassName="active" activeStyle={{fontWeight: 'Bold'}}>Home</IndexLink></li>
+                <li><IndexLink to="/" activeClassName="active" activeStyle={{fontWeight: 'Bold'}}>All Time Stats</IndexLink></li>
                 <li><Link to="/season-stats" activeClassName="active" activeStyle={{fontWeight: 'Bold'}}>Season Stats</Link></li>
               </ul>
             </div>
