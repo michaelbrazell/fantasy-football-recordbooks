@@ -10,6 +10,7 @@ var TeamStats = React.createClass({
     $(".tablesorter").tablesorter({
       sortList: [[1,1],[2,0]]
     });
+    $('.has-tip').foundation();
   },
   render: function() {
     return (
@@ -18,16 +19,20 @@ var TeamStats = React.createClass({
         <div className="row">
           <div className="columns small-12 medium-12">
             <div className="table-scroll">
-              <table className="tablesorter" id="afc-east">
+              <table className="tablesorter" id="standings">
                 <thead>
                   <tr>
                     <th></th>
                     <th>W - L</th>
-                    <th>Win Pct</th>
-                    <th>Avg Place</th>
-                    <th>Playoffs</th>
-                    <th>Championships</th>
-                    <th>Total Seasons</th>
+                    <th>Win%</th>
+                    <th><span data-tooltip aria-haspopup="true" className="has-tip top" data-disable-hover="false" tabIndex="2" title="Points For">PF</span></th>
+                    <th><span data-tooltip aria-haspopup="true" className="has-tip top" data-disable-hover="false" tabIndex="2" title="Points Against">PA</span></th>
+                    <th><span data-tooltip aria-haspopup="true" className="has-tip top" data-disable-hover="false" tabIndex="2" title="An average points for, adjusted for season length">aPF</span></th>
+                    <th><span data-tooltip aria-haspopup="true" className="has-tip top" data-disable-hover="false" tabIndex="2" title="An average points against, adjusted for season length">aPA</span></th>
+                    <th><span data-tooltip aria-haspopup="true" className="has-tip top" data-disable-hover="false" tabIndex="2" title="Average place at the end of the season">Place</span></th>
+                    <th><span data-tooltip aria-haspopup="true" className="has-tip top" data-disable-hover="false" tabIndex="2" title="Total number of playoff appearances">Playoff</span></th>
+                    <th><span data-tooltip aria-haspopup="true" className="has-tip top" data-disable-hover="false" tabIndex="2" title="Total championships won">Champ</span></th>
+                    <th><span data-tooltip aria-haspopup="true" className="has-tip top" data-disable-hover="false" tabIndex="2" title="Total number of seasons in the league">Seasons</span></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -35,12 +40,16 @@ var TeamStats = React.createClass({
                     return (
                       <tr key={i}>
                         <td>{team.Name}</td>
-                        <td>{team.Wins} - {team.Loss}</td>
-                        <td>{team.WinPct}%</td>
-                        <td>{team.AvgPlace}</td>
-                        <td>{team.Playoffs}</td>
-                        <td>{team.Champ}</td>
-                        <td>{team.TotalSeasons}</td>
+                        <td>{team.wins} - {team.losses}</td>
+                        <td>{team.winPct}%</td>
+                        <td>{team.totalPf}</td>
+                        <td>{team.totalPa}</td>
+                        <td>{team.adjustedPf}</td>
+                        <td>{team.adjustedPa}</td>
+                        <td>{team.avgPlace}</td>
+                        <td>{team.playoffs}</td>
+                        <td>{team.champ}</td>
+                        <td>{team.totalSeasons}</td>
                       </tr>
                     )
                   })}
