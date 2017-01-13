@@ -34,21 +34,24 @@ var TeamStats = React.createClass({
                     <th><span data-tooltip aria-haspopup="true" className="has-tip top" data-disable-hover="false" tabIndex="2" title="Total number of playoff appearances">Playoff</span> <i className="fa fa-sort" aria-hidden="true"></i><i className="fa fa-sort-asc" aria-hidden="true"></i><i className="fa fa-sort-desc" aria-hidden="true"></i></th>
                     <th><span data-tooltip aria-haspopup="true" className="has-tip top" data-disable-hover="false" tabIndex="2" title="Total championships won">Champ</span> <i className="fa fa-sort" aria-hidden="true"></i><i className="fa fa-sort-asc" aria-hidden="true"></i><i className="fa fa-sort-desc" aria-hidden="true"></i></th>
                     <th><span data-tooltip aria-haspopup="true" className="has-tip top" data-disable-hover="false" tabIndex="2" title="Total number of seasons in the league">Seasons</span> <i className="fa fa-sort" aria-hidden="true"></i><i className="fa fa-sort-asc" aria-hidden="true"></i><i className="fa fa-sort-desc" aria-hidden="true"></i></th>
-                    <th><span data-tooltip aria-haspopup="true" className="has-tip top" data-disable-hover="false" tabIndex="2" title="Active or Retired Status">A/R</span> <i className="fa fa-sort" aria-hidden="true"></i><i className="fa fa-sort-asc" aria-hidden="true"></i><i className="fa fa-sort-desc" aria-hidden="true"></i></th>
                   </tr>
                 </thead>
                 <tbody>
                   {this.state.teams.map(function(team, i){
                     function checkRetiredStatus() {
                       if (team.status === 'Active') {
-                        return 'A'
+                        return (
+                          <i className="fa fa-circle" aria-hidden="true"></i>
+                        )
                       } else {
-                        return 'R'
+                        return (
+                          <i className="fa fa-circle-o" aria-hidden="true"></i>
+                        )
                       }
                     }
                     return (
                       <tr key={i}>
-                        <td>{team.Name}</td>
+                        <td>{checkRetiredStatus()} {team.Name}</td>
                         <td>{team.wins} - {team.losses}</td>
                         <td>{team.winPct}%</td>
                         <td>{team.totalPf}</td>
@@ -60,7 +63,6 @@ var TeamStats = React.createClass({
                         <td>{team.playoffs}</td>
                         <td>{team.champ}</td>
                         <td>{team.totalSeasons}</td>
-                        <td>{checkRetiredStatus()}</td>
                       </tr>
                     )
                   })}
