@@ -19,8 +19,24 @@ table.tablesorter {
   margin-bottom: 35px;
   th.tablesorter-header {
     cursor: pointer;
+    .fa-sort-asc, .fa-sort-desc {
+      display: none;
+    }
   }
   th.tablesorter-headerDesc {
-    color: red;
+    .fa-sort-desc {
+      display: inline-block;
+    }
+    .fa-sort, .fa-sort-asc {
+      display: none;
+    }
+  }
+  th.tablesorter-headerAsc {
+    .fa-sort-asc {
+      display: inline-block;
+    }
+    .fa-sort, .fa-sort-desc {
+      display: none;
+    }
   }
 }

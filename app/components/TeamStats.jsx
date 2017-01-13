@@ -19,21 +19,22 @@ var TeamStats = React.createClass({
         <div className="row">
           <div className="columns small-12 medium-12">
             <div className="table-scroll">
-              <table className="tablesorter" id="standings">
+              <table className="tablesorter hover" id="standings">
                 <thead>
                   <tr>
                     <th></th>
-                    <th>W - L</th>
-                    <th>Win%</th>
-                    <th><span data-tooltip aria-haspopup="true" className="has-tip top" data-disable-hover="false" tabIndex="2" title="Points For">PF</span></th>
-                    <th><span data-tooltip aria-haspopup="true" className="has-tip top" data-disable-hover="false" tabIndex="2" title="Points Against">PA</span></th>
-                    <th><span data-tooltip aria-haspopup="true" className="has-tip top" data-disable-hover="false" tabIndex="2" title="An average points for, adjusted for season length">aPF</span></th>
-                    <th><span data-tooltip aria-haspopup="true" className="has-tip top" data-disable-hover="false" tabIndex="2" title="An average points against, adjusted for season length">aPA</span></th>
-                    <th><span data-tooltip aria-haspopup="true" className="has-tip top" data-disable-hover="false" tabIndex="2" title="Average place at the end of the season">Place</span></th>
-                    <th><span data-tooltip aria-haspopup="true" className="has-tip top" data-disable-hover="false" tabIndex="2" title="Total number of playoff appearances">Playoff</span></th>
-                    <th><span data-tooltip aria-haspopup="true" className="has-tip top" data-disable-hover="false" tabIndex="2" title="Total championships won">Champ</span></th>
-                    <th><span data-tooltip aria-haspopup="true" className="has-tip top" data-disable-hover="false" tabIndex="2" title="Total number of seasons in the league">Seasons</span></th>
-                    <th><span data-tooltip aria-haspopup="true" className="has-tip top" data-disable-hover="false" tabIndex="2" title="Active or Retired Status">A/R</span></th>
+                    <th>W - L <i className="fa fa-sort" aria-hidden="true"></i><i className="fa fa-sort-asc" aria-hidden="true"></i><i className="fa fa-sort-desc" aria-hidden="true"></i></th>
+                    <th>Win% <i className="fa fa-sort" aria-hidden="true"></i><i className="fa fa-sort-asc" aria-hidden="true"></i><i className="fa fa-sort-desc" aria-hidden="true"></i></th>
+                    <th><span data-tooltip aria-haspopup="true" className="has-tip top" data-disable-hover="false" tabIndex="2" title="Points For">PF</span> <i className="fa fa-sort" aria-hidden="true"></i><i className="fa fa-sort-asc" aria-hidden="true"></i><i className="fa fa-sort-desc" aria-hidden="true"></i></th>
+                    <th><span data-tooltip aria-haspopup="true" className="has-tip top" data-disable-hover="false" tabIndex="2" title="Points Against">PA</span> <i className="fa fa-sort" aria-hidden="true"></i><i className="fa fa-sort-asc" aria-hidden="true"></i><i className="fa fa-sort-desc" aria-hidden="true"></i></th>
+                    <th><span data-tooltip aria-haspopup="true" className="has-tip top" data-disable-hover="false" tabIndex="2" title="An average points for, adjusted for season length">aPF</span> <i className="fa fa-sort" aria-hidden="true"></i><i className="fa fa-sort-asc" aria-hidden="true"></i><i className="fa fa-sort-desc" aria-hidden="true"></i></th>
+                    <th><span data-tooltip aria-haspopup="true" className="has-tip top" data-disable-hover="false" tabIndex="2" title="An average points against, adjusted for season length">aPA</span> <i className="fa fa-sort" aria-hidden="true"></i><i className="fa fa-sort-asc" aria-hidden="true"></i><i className="fa fa-sort-desc" aria-hidden="true"></i></th>
+                    <th><span data-tooltip aria-haspopup="true" className="has-tip top" data-disable-hover="false" tabIndex="2" title="Average adjusted point differential">+/-</span> <i className="fa fa-sort" aria-hidden="true"></i><i className="fa fa-sort-asc" aria-hidden="true"></i><i className="fa fa-sort-desc" aria-hidden="true"></i></th>
+                    <th><span data-tooltip aria-haspopup="true" className="has-tip top" data-disable-hover="false" tabIndex="2" title="Average place at the end of the season">Place</span> <i className="fa fa-sort" aria-hidden="true"></i><i className="fa fa-sort-asc" aria-hidden="true"></i><i className="fa fa-sort-desc" aria-hidden="true"></i></th>
+                    <th><span data-tooltip aria-haspopup="true" className="has-tip top" data-disable-hover="false" tabIndex="2" title="Total number of playoff appearances">Playoff</span> <i className="fa fa-sort" aria-hidden="true"></i><i className="fa fa-sort-asc" aria-hidden="true"></i><i className="fa fa-sort-desc" aria-hidden="true"></i></th>
+                    <th><span data-tooltip aria-haspopup="true" className="has-tip top" data-disable-hover="false" tabIndex="2" title="Total championships won">Champ</span> <i className="fa fa-sort" aria-hidden="true"></i><i className="fa fa-sort-asc" aria-hidden="true"></i><i className="fa fa-sort-desc" aria-hidden="true"></i></th>
+                    <th><span data-tooltip aria-haspopup="true" className="has-tip top" data-disable-hover="false" tabIndex="2" title="Total number of seasons in the league">Seasons</span> <i className="fa fa-sort" aria-hidden="true"></i><i className="fa fa-sort-asc" aria-hidden="true"></i><i className="fa fa-sort-desc" aria-hidden="true"></i></th>
+                    <th><span data-tooltip aria-haspopup="true" className="has-tip top" data-disable-hover="false" tabIndex="2" title="Active or Retired Status">A/R</span> <i className="fa fa-sort" aria-hidden="true"></i><i className="fa fa-sort-asc" aria-hidden="true"></i><i className="fa fa-sort-desc" aria-hidden="true"></i></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -54,6 +55,7 @@ var TeamStats = React.createClass({
                         <td>{team.totalPa}</td>
                         <td>{team.adjustedPf}</td>
                         <td>{team.adjustedPa}</td>
+                        <td>{team.pointDifferential}</td>
                         <td>{team.avgPlace}</td>
                         <td>{team.playoffs}</td>
                         <td>{team.champ}</td>
