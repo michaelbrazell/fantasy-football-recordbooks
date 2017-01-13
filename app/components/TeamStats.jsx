@@ -33,10 +33,18 @@ var TeamStats = React.createClass({
                     <th><span data-tooltip aria-haspopup="true" className="has-tip top" data-disable-hover="false" tabIndex="2" title="Total number of playoff appearances">Playoff</span></th>
                     <th><span data-tooltip aria-haspopup="true" className="has-tip top" data-disable-hover="false" tabIndex="2" title="Total championships won">Champ</span></th>
                     <th><span data-tooltip aria-haspopup="true" className="has-tip top" data-disable-hover="false" tabIndex="2" title="Total number of seasons in the league">Seasons</span></th>
+                    <th><span data-tooltip aria-haspopup="true" className="has-tip top" data-disable-hover="false" tabIndex="2" title="Active or Retired Status">A/R</span></th>
                   </tr>
                 </thead>
                 <tbody>
                   {this.state.teams.map(function(team, i){
+                    function checkRetiredStatus() {
+                      if (team.status === 'Active') {
+                        return 'A'
+                      } else {
+                        return 'R'
+                      }
+                    }
                     return (
                       <tr key={i}>
                         <td>{team.Name}</td>
@@ -50,6 +58,7 @@ var TeamStats = React.createClass({
                         <td>{team.playoffs}</td>
                         <td>{team.champ}</td>
                         <td>{team.totalSeasons}</td>
+                        <td>{checkRetiredStatus()}</td>
                       </tr>
                     )
                   })}
