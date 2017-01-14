@@ -28,6 +28,7 @@ module.exports = {
       Nav: 'app/components/Nav.jsx',
       TeamStats: 'app/components/TeamStats.jsx',
       SeasonStats: 'app/components/SeasonStats.jsx',
+      WhatsNew: 'app/components/WhatsNew.jsx',
       data: 'public/data/ff-records.json',
       applicationStyles: 'app/styles/app.scss'
     },

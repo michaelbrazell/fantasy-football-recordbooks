@@ -39,4 +39,12 @@ table.tablesorter {
       display: none;
     }
   }
+  td.retired-status i, td.active-status i {
+    color: rgba(165, 59, 42, 0.17);
+    font-size: 12px;
+    margin-right: 10px;
+  }
+  td.active-status i {
+    color: rgba(42, 165, 116, 0.17);
+  }
 }

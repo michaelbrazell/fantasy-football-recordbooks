@@ -6,6 +6,13 @@ var TeamStats = React.createClass({
     var teams = data;
     return { teams } ;
   },
+  filterPlayers: function (e) {
+    console.log('Filtered Players');
+    var filterChoice = e.target.value;
+    console.log(filterChoice)
+
+    return { null }
+  },
   componentDidMount: function() {
     $(".tablesorter").tablesorter({
       sortList: [[1,1],[2,0]]
@@ -18,7 +25,16 @@ var TeamStats = React.createClass({
         <h1>Team Records</h1>
         <div className="row">
           <div className="columns small-12 medium-12">
-            <div className="table-scroll">
+            <fieldset className="fieldset" onChange={this.filterPlayers}>
+              <legend>Filter:</legend>
+              <input type="radio" name="filterStatus" value="All" id="filterShowAll"/><label htmlFor="filterAll">All</label>
+              <input type="radio" name="filterStatus" value="Active" id="filterShowActive"/><label htmlFor="filterActive">Active</label>
+            </fieldset>
+          </div>
+        </div>
+        <div className="row">
+          <div className="columns small-12 medium-12">
+            <div className="scroll">
               <table className="tablesorter hover" id="standings">
                 <thead>
                   <tr>
@@ -45,13 +61,13 @@ var TeamStats = React.createClass({
                         )
                       } else {
                         return (
-                          <i className="fa fa-circle-o" aria-hidden="true"></i>
+                          <i className="fa fa-circle" aria-hidden="true"></i>
                         )
                       }
                     }
                     return (
                       <tr key={i}>
-                        <td>{checkRetiredStatus()} {team.Name}</td>
+                        <td className={team.status === 'Retired' ? 'retired-status' : 'active-status'}>{checkRetiredStatus()} {team.Name}</td>
                         <td>{team.wins} - {team.losses}</td>
                         <td>{team.winPct}%</td>
                         <td>{team.totalPf}</td>

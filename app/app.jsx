@@ -4,6 +4,7 @@ var {Route, Router, IndexRoute, hashHistory} = require('react-router');
 var Main = require('Main');
 var TeamStats = require('TeamStats');
 var SeasonStats = require('SeasonStats');
+var WhatsNew = require('WhatsNew');
 
 // Load Foundation
 require('style!css!foundation-sites/dist/css/foundation.min.css')
@@ -16,6 +17,7 @@ ReactDOM.render(
   <Router history={hashHistory}>
     <Route path="/" component={Main}>
       <Route path="/season-stats" component={SeasonStats}/>
+      <Route path="/whats-new" component={WhatsNew}/>
       <IndexRoute component={TeamStats}/>
     </Route>
   </Router>,
