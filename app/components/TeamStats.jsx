@@ -7,11 +7,14 @@ var TeamStats = React.createClass({
     return { teams } ;
   },
   filterPlayers: function (e) {
-    console.log('Filtered Players');
     var filterChoice = e.target.value;
     console.log(filterChoice)
-
-    return { null }
+    if ( filterChoice === 'filterShowActive') {
+      {this.state.teams.map(function(team, i){
+        //
+      })}
+    }
+    return { teams }
   },
   componentDidMount: function() {
     $(".tablesorter").tablesorter({
@@ -27,8 +30,8 @@ var TeamStats = React.createClass({
           <div className="columns small-12 medium-12">
             <fieldset className="fieldset" onChange={this.filterPlayers}>
               <legend>Filter:</legend>
-              <input type="radio" name="filterStatus" value="All" id="filterShowAll"/><label htmlFor="filterAll">All</label>
-              <input type="radio" name="filterStatus" value="Active" id="filterShowActive"/><label htmlFor="filterActive">Active</label>
+              <input type="radio" name="filterStatus" value="All" id="filterShowAll"/><label htmlFor="filterShowAll">All</label>
+              <input type="radio" name="filterStatus" value="Active" id="filterShowActive"/><label htmlFor="filterShowActive">Active</label>
             </fieldset>
           </div>
         </div>

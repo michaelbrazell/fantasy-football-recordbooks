@@ -29,6 +29,7 @@ module.exports = {
       TeamStats: 'app/components/TeamStats.jsx',
       SeasonStats: 'app/components/SeasonStats.jsx',
       WhatsNew: 'app/components/WhatsNew.jsx',
+      GetUpdates: 'app/api/GetUpdates.jsx',
       data: 'public/data/ff-records.json',
       applicationStyles: 'app/styles/app.scss'
     },
