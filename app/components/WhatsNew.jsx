@@ -33,7 +33,6 @@ var WhatsNew = React.createClass({
         <h1>What's New</h1>
         {Object.keys(this.state.message).map(function (key, i) {
           var item = that.state.message[key]
-          console.log(item);
           return (
             <div key={i} className="row">
               <div className="columns small-2 medium-1">

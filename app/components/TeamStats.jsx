@@ -23,6 +23,11 @@ var TeamStats = React.createClass({
     });
     $('.has-tip').foundation();
   },
+  componentDidUpdate: function() {
+    $(".tablesorter").tablesorter({
+      sortList: [[1,1],[2,0]]
+    });
+  },
   render: function() {
     var that = this;
     console.log('Component Rendered and Filter is ' + that.state.filter);
