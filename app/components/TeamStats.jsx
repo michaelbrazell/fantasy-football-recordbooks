@@ -4,18 +4,18 @@ var data = require('json!data');
 
 var TeamStats = React.createClass({
   getInitialState: function() {
-    var teams = data;
-    return { teams } ;
+    return {
+      filter: null,
+      teams: data
+    }
   },
   filterPlayers: function (e) {
     var filterChoice = e.target.value;
-    console.log(filterChoice)
-    if ( filterChoice === 'filterShowActive') {
-      {this.state.teams.map(function(team, i){
-        //
-      })}
-    }
-    return { teams }
+    console.log('Filter choice selected: ' + filterChoice)
+    this.setState({
+      filter: filterChoice,
+      teams: data
+    });
   },
   componentDidMount: function() {
     $(".tablesorter").tablesorter({
@@ -24,6 +24,8 @@ var TeamStats = React.createClass({
     $('.has-tip').foundation();
   },
   render: function() {
+    var that = this;
+    console.log('Component Rendered and Filter is ' + that.state.filter);
     return (
       <div>
         <h1>Team Records</h1>
@@ -58,14 +60,32 @@ var TeamStats = React.createClass({
                 </thead>
                 <tbody>
                   {this.state.teams.map(function(team, i){
-                    return (
-                      <TeamRow
-                        key={i} status={team.status} Name={team.Name} 
-                        wins={team.wins} losses={team.losses} winPct={team.winPct}
-                        totalPf={team.totalPf} totalPa={team.totalPa} adjustedPf={team.adjustedPf}
-                        adjustedPa={team.adjustedPa} pointDifferential={team.pointDifferential} avgPlace={team.avgPlace}
-                        playoffs={team.playoffs} champ={team.champ} totalSeasons={team.totalSeasons} />
-                    )
+                    if (that.state.filter === null || that.state.filter === "All") {
+                      // DIsplay teams that are both active and retired
+                      if (team.status === "Active" || team.status === "Retired") {
+                        return (
+                          <TeamRow
+                            key={i} status={team.status} Name={team.Name}
+                            wins={team.wins} losses={team.losses} winPct={team.winPct}
+                            totalPf={team.totalPf} totalPa={team.totalPa} adjustedPf={team.adjustedPf}
+                            adjustedPa={team.adjustedPa} pointDifferential={team.pointDifferential} avgPlace={team.avgPlace}
+                            playoffs={team.playoffs} champ={team.champ} totalSeasons={team.totalSeasons} />
+                        )
+                      }
+                    } else if (that.state.filter === "Active") {
+                      // display teams that are only active
+                      if (team.status === "Active") {
+                        return (
+                          <TeamRow
+                            key={i} status={team.status} Name={team.Name}
+                            wins={team.wins} losses={team.losses} winPct={team.winPct}
+                            totalPf={team.totalPf} totalPa={team.totalPa} adjustedPf={team.adjustedPf}
+                            adjustedPa={team.adjustedPa} pointDifferential={team.pointDifferential} avgPlace={team.avgPlace}
+                            playoffs={team.playoffs} champ={team.champ} totalSeasons={team.totalSeasons} />
+                        )
+                      }
+                    }
+
                   })}
                 </tbody>
               </table>
