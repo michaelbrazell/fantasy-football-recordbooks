@@ -48,3 +48,7 @@ table.tablesorter {
     color: rgba(42, 165, 116, 0.17);
   }
 }
+
+/* What's New Page */
+h4.commit-item i { display: none; }
+h4.commit-item:hover i { display: inline-block; }

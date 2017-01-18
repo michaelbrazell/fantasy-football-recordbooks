@@ -1,4 +1,5 @@
 var React = require('react');
+var TeamRow = require('TeamRow');
 var data = require('json!data');
 
 var TeamStats = React.createClass({
@@ -57,32 +58,13 @@ var TeamStats = React.createClass({
                 </thead>
                 <tbody>
                   {this.state.teams.map(function(team, i){
-                    function checkRetiredStatus() {
-                      if (team.status === 'Active') {
-                        return (
-                          <i className="fa fa-circle" aria-hidden="true"></i>
-                        )
-                      } else {
-                        return (
-                          <i className="fa fa-circle" aria-hidden="true"></i>
-                        )
-                      }
-                    }
                     return (
-                      <tr key={i}>
-                        <td className={team.status === 'Retired' ? 'retired-status' : 'active-status'}>{checkRetiredStatus()} {team.Name}</td>
-                        <td>{team.wins} - {team.losses}</td>
-                        <td>{team.winPct}%</td>
-                        <td>{team.totalPf}</td>
-                        <td>{team.totalPa}</td>
-                        <td>{team.adjustedPf}</td>
-                        <td>{team.adjustedPa}</td>
-                        <td>{team.pointDifferential}</td>
-                        <td>{team.avgPlace}</td>
-                        <td>{team.playoffs}</td>
-                        <td>{team.champ}</td>
-                        <td>{team.totalSeasons}</td>
-                      </tr>
+                      <TeamRow
+                        key={i} status={team.status} Name={team.Name} 
+                        wins={team.wins} losses={team.losses} winPct={team.winPct}
+                        totalPf={team.totalPf} totalPa={team.totalPa} adjustedPf={team.adjustedPf}
+                        adjustedPa={team.adjustedPa} pointDifferential={team.pointDifferential} avgPlace={team.avgPlace}
+                        playoffs={team.playoffs} champ={team.champ} totalSeasons={team.totalSeasons} />
                     )
                   })}
                 </tbody>

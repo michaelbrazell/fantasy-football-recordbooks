@@ -1,3 +1,4 @@
+// Not using this.  Data is all grabbed in TeamStats Component. Should break out
 var axios = require('axios');
 
 const GITHUB_URL = 'https://api.github.com/repos/michaelbrazell/fantasy-football-recordbooks/commits';

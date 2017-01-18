@@ -40,7 +40,7 @@ var WhatsNew = React.createClass({
                 <img src={item.author.avatar_url} alt={item.commit.author.name}></img>
               </div>
               <div className="columns small-10 medium-11">
-                <h4>{item.commit.message} <a href={item.commit.html_url}><i className="fa fa-link" aria-hidden="true"></i></a></h4>
+                <h4 className="commit-item"><a href={item.commit.html_url}>{item.commit.message} <i className="fa fa-link" aria-hidden="true"></i></a></h4>
                 <p>By <a href={item.author.html_url}>{item.commit.author.name}</a>, on {item.commit.author.date}</p>
               </div>
 

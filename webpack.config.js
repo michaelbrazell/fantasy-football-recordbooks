@@ -27,6 +27,7 @@ module.exports = {
       Main: 'app/components/Main.jsx',
       Nav: 'app/components/Nav.jsx',
       TeamStats: 'app/components/TeamStats.jsx',
+      TeamRow: 'app/components/TeamRow.jsx',
       SeasonStats: 'app/components/SeasonStats.jsx',
       WhatsNew: 'app/components/WhatsNew.jsx',
       GetUpdates: 'app/api/GetUpdates.jsx',
