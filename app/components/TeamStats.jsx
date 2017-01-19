@@ -11,7 +11,6 @@ var TeamStats = React.createClass({
   },
   filterPlayers: function (e) {
     var filterChoice = e.target.value;
-    console.log('Filter choice selected: ' + filterChoice)
     this.setState({
       filter: filterChoice,
       teams: data
@@ -30,7 +29,6 @@ var TeamStats = React.createClass({
   },
   render: function() {
     var that = this;
-    console.log('Component Rendered and Filter is ' + that.state.filter);
     return (
       <div>
         <div className="row">
