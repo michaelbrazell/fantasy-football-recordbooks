@@ -13,6 +13,24 @@ ul.menu li:first-child {
   padding-left: 0;
 }
 
+.top-bar {
+  background-color: #131313;
+  ul {
+    background-color: #131313;
+    li {
+      &.menu-text {
+        color: #fff;
+      }
+      a {
+        color: #65a9d6;
+        &:hover {
+          color: #72c1f5;
+        }
+      }
+    }
+  }
+}
+
 /* Table Styles */
 table.tablesorter {
   width: 100%;
