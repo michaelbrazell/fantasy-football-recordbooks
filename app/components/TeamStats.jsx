@@ -1,5 +1,6 @@
 var React = require('react');
 var TeamRow = require('TeamRow');
+var FilterStatus = require('FilterStatus');
 var data = require('json!data');
 
 var TeamStats = React.createClass({
@@ -33,14 +34,12 @@ var TeamStats = React.createClass({
     console.log('Component Rendered and Filter is ' + that.state.filter);
     return (
       <div>
-        <h1>Team Records</h1>
         <div className="row">
-          <div className="columns small-12 medium-12">
-            <fieldset className="fieldset" onChange={this.filterPlayers}>
-              <legend>Filter:</legend>
-              <input type="radio" name="filterStatus" value="All" id="filterShowAll"/><label htmlFor="filterShowAll">All</label>
-              <input type="radio" name="filterStatus" value="Active" id="filterShowActive"/><label htmlFor="filterShowActive">Active</label>
-            </fieldset>
+          <div className="columns small-12 medium-8">
+            <h1>Team Records</h1>
+          </div>
+          <div className="columns small-12 medium-4">
+            <FilterStatus />
           </div>
         </div>
         <div className="row">

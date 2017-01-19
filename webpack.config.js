@@ -30,6 +30,7 @@ module.exports = {
       TeamRow: 'app/components/TeamRow.jsx',
       SeasonStats: 'app/components/SeasonStats.jsx',
       WhatsNew: 'app/components/WhatsNew.jsx',
+      FilterStatus: 'app/components/FilterStatus.jsx',
       GetUpdates: 'app/api/GetUpdates.jsx',
       data: 'public/data/ff-records.json',
       applicationStyles: 'app/styles/app.scss'
