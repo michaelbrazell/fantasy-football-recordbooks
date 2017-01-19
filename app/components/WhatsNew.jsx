@@ -33,16 +33,22 @@ var WhatsNew = React.createClass({
         <h1>What's New</h1>
         {Object.keys(this.state.message).map(function (key, i) {
           var item = that.state.message[key]
+          var formatDate = new Date(item.commit.author.date)
+          var dd = formatDate.getDate();
+          var mm = formatDate.getMonth()+1;
+          var yyyy = formatDate.getFullYear();
           return (
             <div key={i} className="row">
               <div className="columns small-2 medium-1">
                 <img src={item.author.avatar_url} alt={item.commit.author.name}></img>
               </div>
               <div className="columns small-10 medium-11">
-                <h4 className="commit-item"><a href={item.commit.html_url}>{item.commit.message} <i className="fa fa-link" aria-hidden="true"></i></a></h4>
-                <p>By <a href={item.author.html_url}>{item.commit.author.name}</a>, on {item.commit.author.date}</p>
+                <h5 className="commit-item"><a href={item.commit.html_url}>{item.commit.message} <i className="fa fa-link" aria-hidden="true"></i></a></h5>
+                <p>By <a href={item.author.html_url}>{item.commit.author.name}</a>, on {mm}/{dd}/{yyyy}</p>
               </div>
-
+              <div className="columns small-12">
+                <hr></hr>
+              </div>
             </div>
           )
         })}
