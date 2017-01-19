@@ -5,7 +5,6 @@ var Main = require('Main');
 var TeamStats = require('TeamStats');
 var SeasonStats = require('SeasonStats');
 var WhatsNew = require('WhatsNew');
-var Blogs = require('Blogs');
 
 // Load Foundation
 require('style!css!foundation-sites/dist/css/foundation.min.css')
@@ -19,7 +18,6 @@ ReactDOM.render(
     <Route path="/" component={Main}>
       <Route path="/season-stats" component={SeasonStats}/>
       <Route path="/whats-new" component={WhatsNew}/>
-      <Route path="/blogs" component={Blogs}/>
       <IndexRoute component={TeamStats}/>
     </Route>
   </Router>,
